@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const StaticRendered = ({ date }) => {
+const ServerSiderRendered = ({ date }) => {
   return (
     <div>
       <Link href="/">Home</Link>
@@ -10,11 +10,10 @@ const StaticRendered = ({ date }) => {
   );
 };
 
-export default StaticRendered;
+export default ServerSiderRendered;
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   return {
-    revalidate: 10,
     props: {
       date: new Date().toISOString(),
     }, // will be passed to the page component as props
