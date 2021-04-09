@@ -14,6 +14,7 @@ export default ServerSiderRendered;
 
 export async function getStaticProps(context) {
   return {
+    revalidate: 10,
     props: {
       date: new Date().toISOString(),
       slug: context.params.slug,

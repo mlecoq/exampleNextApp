@@ -20,6 +20,7 @@ export async function getStaticProps(context) {
   const user = (await result.json()).results[0];
 
   return {
+    revalidate: 10,
     props: {
       user,
       date: new Date().toISOString(),
